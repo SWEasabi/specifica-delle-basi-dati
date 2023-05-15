@@ -1,0 +1,49 @@
+\documentclass{report}
+\input{config}
+
+\renewcommand{\title}{
+    Specifica delle basi di dati
+}
+
+\newcommand{\people}{
+    \normalsize
+    \begin{center}
+        \begin{tabularx}{7cm}{l | X}            
+            \textbf{Uso} & Esterno\\
+            \textbf{Destinatario} & Committente\\
+            & Cliente \\
+        \end{tabularx}
+    \end{center}
+}
+
+\fancypagestyle{plain}{%
+    \fancyhead{} % clear all header fields
+    \fancyhead[L]{\leftmark}
+    \fancyhead[R]{\textit{SWEasabi} \includegraphics[height=30pt]{\gassets global-assets/img/loghi/SWEasabi_compact_logo.png}}
+    \fancyfoot{} % clear all footer fields
+    \fancyfoot[L]{\thepage}
+    \fancyfoot[R]{Specifica delle basi di dati}
+}
+
+\begin{document}
+
+\pagestyle{fancy}
+
+\fancyhead{} % clear all header fields
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\textit{SWEasabi} \includegraphics[height=30pt]{\gassets global-assets/img/loghi/SWEasabi_compact_logo.png}}
+\fancyfoot{} % clear all footer fields
+\fancyfoot[L]{\thepage}
+\fancyfoot[R]{Specifica delle basi di dati}
+
+
+\input{\gassets global-assets/tex/header}
+\thispagestyle{empty}
+\clearpage
+\pagenumbering{Roman}
+
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+
+\end{document}
