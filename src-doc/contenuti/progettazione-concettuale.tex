@@ -1,0 +1,44 @@
+\chapter{Progettazione concettuale}
+
+\section{Analisi delle entità}
+
+\begin{tabular}{|llll|}
+    \hline
+    \multicolumn{4}{|c|}{\textbf{Utente}}                                                                                        \\ \hline
+    \multicolumn{1}{|l|}{Username} & \multicolumn{1}{l|}{VARCHAR} & \multicolumn{1}{l|}{Identifica unicamente l'utente} & Chiave \\ \hline
+    \multicolumn{1}{|l|}{Nome}     & \multicolumn{1}{l|}{VARCHAR} & \multicolumn{2}{l|}{Il nome dell'utente}                     \\ \hline
+    \multicolumn{1}{|l|}{Cognome}  & \multicolumn{1}{l|}{VARCHAR} & \multicolumn{2}{l|}{Il cognome dell'utente}                  \\ \hline
+    \multicolumn{1}{|l|}{Email}    & \multicolumn{1}{l|}{VARCHAR} & \multicolumn{2}{l|}{L'email dell'utente}                     \\ \hline
+    \multicolumn{1}{|l|}{Password} & \multicolumn{1}{l|}{VARCHAR} & \multicolumn{2}{l|}{La password dell'utente}                 \\ \hline
+    \multicolumn{1}{|l|}{Ruolo}    & \multicolumn{1}{l|}{INTEGER} & \multicolumn{2}{l|}{Il ruolo dell'utente}                    \\ \hline
+    \end{tabular}
+
+\begin{tabular}{|llll|}
+    \hline
+    \multicolumn{4}{|c|}{\textbf{Ruolo}}                                                                                         \\ \hline
+    \multicolumn{1}{|l|}{Codice} & \multicolumn{1}{l|}{INTEGER} & \multicolumn{1}{l|}{Identifica univocamente il ruolo} & Chiave \\ \hline
+    \multicolumn{1}{|l|}{Nome}   & \multicolumn{1}{l|}{VARCHAR} & \multicolumn{2}{l|}{Il nome dell'utente}                       \\ \hline
+\end{tabular}
+
+\begin{tabular}{|llll|}
+    \hline
+    \multicolumn{4}{|c|}{\textbf{Misuratore}}                                                                                            \\ \hline
+    \multicolumn{1}{|l|}{Codice}    & \multicolumn{1}{l|}{INTEGER} & \multicolumn{1}{l|}{Identifica univocamente il misuratore} & Chiave \\ \hline
+    \multicolumn{1}{|l|}{Nome}      & \multicolumn{1}{l|}{VARCHAR} & \multicolumn{2}{l|}{Il nome dell'utente}                            \\ \hline
+    \multicolumn{1}{|l|}{Posizione} & \multicolumn{1}{l|}{VARCHAR} & \multicolumn{2}{l|}{Coordinate del misuratore}                      \\ \hline
+    \multicolumn{1}{|l|}{Area}      & \multicolumn{1}{l|}{INTEGER} & \multicolumn{2}{l|}{Area di appartenenza del misuratore}            \\ \hline
+\end{tabular}
+
+\begin{tabular}{|llll|}
+    \hline
+    \multicolumn{4}{|c|}{\textbf{Sensore}}                                                                                         \\ \hline
+    \multicolumn{1}{|l|}{Codice} & \multicolumn{1}{l|}{INTEGER} & \multicolumn{1}{l|}{Identifica univocamente il sensore} & Chiave \\ \hline
+    \multicolumn{1}{|l|}{Raggio} & \multicolumn{1}{l|}{DECIMAL} & \multicolumn{2}{l|}{La misura del raggio d'azione del sensore}   \\ \hline
+\end{tabular}
+
+\begin{tabular}{|llll|}
+    \hline
+    \multicolumn{4}{|c|}{\textbf{Lampione}}                                                                                             \\ \hline
+    \multicolumn{1}{|l|}{Codice}     & \multicolumn{1}{l|}{INTEGER} & \multicolumn{1}{l|}{Identifica univocamente il lampione} & Chiave \\ \hline
+    \multicolumn{1}{|l|}{Luminosita} & \multicolumn{1}{l|}{DECIMAL} & \multicolumn{2}{l|}{Intensità luminosa del lampione}              \\ \hline
+\end{tabular}
