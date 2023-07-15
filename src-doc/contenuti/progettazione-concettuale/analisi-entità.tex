@@ -1,0 +1,109 @@
+\section{Analisi delle entità}
+
+\textbf{Se non specificato l'attributo è NOT NULL}
+
+%UTENTE
+\begin{center}
+    \begin{tabularx}{\textwidth}{|l|l|l|X|}
+        \hline
+        \rowcolor{gray!30}
+        \multicolumn{4}{|c|}{\textbf{UTENTE}}\\
+        \hline
+        Username & VARCHAR(20) & Identifica univocamente un utente nel sistema & Chiave\\
+        \hline
+        Nome & VARCHAR(50) & \multicolumn{2}{l|}{Il nome dell'utente} \\
+        \hline
+        Cognome & VARCHAR(50) & \multicolumn{2}{l|}{Il nome dell'imbarcazione} \\
+        \hline
+        Email & VARCHAR(50) & \multicolumn{2}{l|}{La quantità di posti letto dell'imbarcazione} \\
+        \hline
+        Password & VARCHAR(20) & \multicolumn{2}{l|}{Nome dello stato di cui batte bandiera l'imbarcazione} \\
+        \hline
+        Ruolo & & Identifica il ruolo dell'utente & Chiave esterna: Ruolo(Id)\\
+        \hline
+    \end{tabularx}
+\end{center}
+
+%RUOLO
+\begin{center}
+    \begin{tabularx}{\textwidth}{|l|l|l|X|}
+        \hline
+        \rowcolor{gray!30}
+        \multicolumn{4}{|c|}{\textbf{RUOLO}}\\
+        \hline
+        Id & INTEGER  & Identifica univocamente un ruolo che può essere ricoperto dall'utente & Chiave\\
+        \hline
+        Nome & VARCHAR(50) & \multicolumn{2}{l|}{Il nome del ruolo} \\
+        \hline
+    \end{tabularx}
+\end{center}
+
+%AREA
+\begin{center}
+    \begin{tabularx}{\textwidth}{|l|l|l|X|}
+        \hline
+        \rowcolor{gray!30}
+        \multicolumn{4}{|c|}{\textbf{AREA}}\\
+        \hline
+        Id & INTEGER & Identifica univocamente un'area all'interno del sistema & Chiave\\
+        \hline
+        Nome & VARCHAR(50) & \multicolumn{2}{l|}{Il nome dell'area} \\
+        \hline
+        AutoMode & BOOLEAN & \multicolumn{2}{l|}{Specifica se l'area viene gestita in modalità automatica o no (manuale)} \\
+        \hline
+        LvlInf & VARCHAR(50) & \multicolumn{2}{l|}{In area gestita in modalità automatica, questo è il livello di luminosità a cui vengono posti i lampioni se non vengono rilevate persone all'interno dell'area} \\
+        \hline
+        LvlSup & VARCHAR(20) & \multicolumn{2}{l|}{In area gestita in modalità automatica, questo è il livello di luminosità a cui vengono posti i lampioni se vengono rilevate persone all'interno dell'area} \\
+        \hline
+    \end{tabularx}
+\end{center}
+
+%MISURATORE
+\begin{center}
+    \begin{tabularx}{\textwidth}{|l|l|l|X|}
+        \hline
+        \rowcolor{gray!30}
+        \multicolumn{4}{|c|}{\textbf{MISURATORE}}\\
+        \hline
+        Id & SERIAL & Identifica univocamente un misuratore del livello di luminosità & Chiave\\
+        \hline
+        Tipo & VARCHAR(10) & \multicolumn{2}{l|}{La tipologia del misuratore} \\
+        \hline
+        Latitudine & REAL & \multicolumn{2}{l|}{Latitudine delle coordinate geografiche in cui viene posto il misuratore} \\
+        \hline
+        Longitudine & REAL & \multicolumn{2}{l|}{Longitudine delle coordinate geografiche in cui viene posto il misuratore} \\
+        \hline
+        idArea & & Identifica l'area a cui fa riferimento il misuratore & Chiave esterna: Area(Id)\\
+        \hline
+    \end{tabularx}
+\end{center}
+
+%SENSORE
+\begin{center}
+    \begin{tabularx}{\textwidth}{|l|l|l|X|}
+        \hline
+        \rowcolor{gray!30}
+        \multicolumn{4}{|c|}{\textbf{SENSORE}}\\
+        \hline
+        Id & SERIAL & Identifica univocamente un sensore di rilevamento di persone & Chiave\\
+        \hline
+        Raggio & INTEGER & \multicolumn{2}{l|}{Il raggio d'azione entro il quale il sensore è in grado di rilevare persone} \\
+        idMisuratore & & Identifica il misuratore a cui fa riferimento il sensore & Chiave esterna: Misuratore(Id)\\
+        \hline
+    \end{tabularx}
+\end{center}
+
+%LAMPIONE
+\begin{center}
+    \begin{tabularx}{\textwidth}{|l|l|l|X|}
+        \hline
+        \rowcolor{gray!30}
+        \multicolumn{4}{|c|}{\textbf{LAMPIONE}}\\
+        \hline
+        Id & SERIAL & Identifica univocamente un lampione presente all'interno di un'area & Chiave\\
+        \hline
+        Luminosità & INTEGER & \multicolumn{2}{l|}{Livello di luminosità in cui si trova il sensore} \\
+        idMisuratore & & Identifica il misuratore a cui fa riferimento il lampione & Chiave esterna: Misuratore(Id)\\
+        \hline
+    \end{tabularx}
+\end{center}
