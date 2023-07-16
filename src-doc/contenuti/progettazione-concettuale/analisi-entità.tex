@@ -80,32 +80,24 @@
 
 %SENSORE
 \begin{center}
-    \begin{tabularx}{\textwidth}{|l|l|l|X|}
+    \begin{tabularx}{\textwidth}{|l|l|X}
         \hline
         \rowcolor{gray!30}
-        \multicolumn{4}{|c|}{\textbf{SENSORE}}\\
+        \multicolumn{3}{|c|}{\textbf{SENSORE}}\\
         \hline
-        Id & SERIAL & Identifica univocamente un sensore di rilevamento di persone & Chiave\\
-        \hline
-        Raggio & INTEGER & \multicolumn{2}{l|}{Il raggio d'azione entro il quale il sensore è in grado} \\ & & \multicolumn{2}{l|}{di rilevare persone} \\
-        \hline
-        idMisuratore & & Identifica il misuratore a cui fa riferimento il sensore & Chiave esterna: Misuratore(Id)\\
+        Raggio & INTEGER & Il raggio d'azione entro il quale il sensore è in grado di rilevare persone \\
         \hline
     \end{tabularx}
 \end{center}
 
 %LAMPIONE
 \begin{center}
-    \begin{tabularx}{\textwidth}{|l|l|l|X|}
+    \begin{tabularx}{\textwidth}{|l|l|X|}
         \hline
         \rowcolor{gray!30}
-        \multicolumn{4}{|c|}{\textbf{LAMPIONE}}\\
+        \multicolumn{3}{|c|}{\textbf{LAMPIONE}}\\
         \hline
-        Id & SERIAL & Identifica univocamente un lampione presente all'interno di un'area & Chiave\\
-        \hline
-        Luminosità & INTEGER & \multicolumn{2}{l|}{Livello di luminosità in cui si trova il sensore} \\
-        \hline
-        idMisuratore & & Identifica il misuratore a cui fa riferimento il lampione & Chiave esterna: Misuratore(Id)\\
+        Luminosità & INTEGER & Livello di luminosità in cui si trova il lampione \\
         \hline
     \end{tabularx}
 \end{center}
