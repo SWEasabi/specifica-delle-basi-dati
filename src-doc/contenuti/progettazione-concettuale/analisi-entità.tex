@@ -9,17 +9,17 @@
         \rowcolor{gray!30}
         \multicolumn{4}{|c|}{\textbf{UTENTE}}\\
         \hline
-        Username & VARCHAR(20) & Identifica univocamente un utente nel sistema & Chiave\\
+        username & VARCHAR(20) & Identifica univocamente un utente nel sistema & Chiave\\
         \hline
-        Nome & VARCHAR(50) & \multicolumn{2}{l|}{Il nome dell'utente} \\
+        nome & VARCHAR(50) & \multicolumn{2}{l|}{Il nome dell'utente} \\
         \hline
-        Cognome & VARCHAR(50) & \multicolumn{2}{l|}{Il nome dell'imbarcazione} \\
+        cognome & VARCHAR(50) & \multicolumn{2}{l|}{Il nome dell'imbarcazione} \\
         \hline
-        Email & VARCHAR(50) & \multicolumn{2}{l|}{La quantità di posti letto dell'imbarcazione} \\
+        email & VARCHAR(50) & \multicolumn{2}{l|}{La quantità di posti letto dell'imbarcazione} \\
         \hline
-        Password & VARCHAR(20) & \multicolumn{2}{l|}{Nome dello stato di cui batte bandiera l'imbarcazione} \\
+        password & VARCHAR(20) & \multicolumn{2}{l|}{Nome dello stato di cui batte bandiera l'imbarcazione} \\
         \hline
-        Ruolo & & Identifica il ruolo dell'utente & Chiave esterna: Ruolo(Id)\\
+        ruolo & INTEGER & Identifica il ruolo dell'utente & Chiave esterna: Ruolo(id)\\
         \hline
     \end{tabularx}
 \end{center}
@@ -31,9 +31,9 @@
         \rowcolor{gray!30}
         \multicolumn{4}{|c|}{\textbf{RUOLO}}\\
         \hline
-        Id & INTEGER  & Identifica univocamente un ruolo che può essere ricoperto dall'utente & Chiave\\
+        id & INTEGER  & Identifica univocamente un ruolo che può essere ricoperto dall'utente & Chiave\\
         \hline
-        Nome & VARCHAR(50) & \multicolumn{2}{l|}{Il nome del ruolo} \\
+        nome & VARCHAR(50) & \multicolumn{2}{l|}{Il nome del ruolo} \\
         \hline
     \end{tabularx}
 \end{center}
@@ -45,15 +45,15 @@
         \rowcolor{gray!30}
         \multicolumn{4}{|c|}{\textbf{AREA}}\\
         \hline
-        Id & INTEGER & Identifica univocamente un'area all'interno del sistema & Chiave\\
+        id & INTEGER & Identifica univocamente un'area all'interno del sistema & Chiave\\
         \hline
-        Nome & VARCHAR(50) & \multicolumn{2}{l|}{Il nome dell'area} \\
+        nome & VARCHAR(50) & \multicolumn{2}{l|}{Il nome dell'area} \\
         \hline
-        AutoMode & BOOLEAN & \multicolumn{2}{l|}{Specifica se l'area viene gestita in modalità automatica o no (manuale)} \\
+        autoMode & BOOLEAN & \multicolumn{2}{l|}{Specifica se l'area viene gestita in modalità automatica o no (manuale)} \\
         \hline
-        LvlInf & VARCHAR(50) & \multicolumn{2}{l|}{In area gestita in modalità automatica, questo è il livello di luminosità} \\ & & \multicolumn{2}{l|}{a cui vengono posti i lampioni se non vengono rilevate persone all'interno dell'area} \\
+        lvlInf & VARCHAR(50) & \multicolumn{2}{l|}{In area gestita in modalità automatica, questo è il livello di luminosità} \\ & & \multicolumn{2}{l|}{a cui vengono posti i lampioni se non vengono rilevate persone all'interno dell'area} \\
         \hline
-        LvlSup & VARCHAR(20) & \multicolumn{2}{l|}{In area gestita in modalità automatica, questo è il livello di luminosità} \\ & & \multicolumn{2}{l|}{a cui vengono posti i lampioni se vengono rilevate persone all'interno dell'area} \\
+        lvlSup & VARCHAR(20) & \multicolumn{2}{l|}{In area gestita in modalità automatica, questo è il livello di luminosità} \\ & & \multicolumn{2}{l|}{a cui vengono posti i lampioni se vengono rilevate persone all'interno dell'area} \\
         \hline
     \end{tabularx}
 \end{center}
@@ -65,15 +65,15 @@
         \rowcolor{gray!30}
         \multicolumn{4}{|c|}{\textbf{MISURATORE}}\\
         \hline
-        Id & SERIAL & Identifica univocamente un misuratore del livello di luminosità & Chiave\\
+        id & SERIAL & Identifica univocamente un misuratore del livello di luminosità & Chiave\\
         \hline
-        Tipo & VARCHAR(10) & \multicolumn{2}{l|}{La tipologia del misuratore} \\
+        tipo & VARCHAR(10) & \multicolumn{2}{l|}{La tipologia del misuratore} \\
         \hline
-        Latitudine & REAL & \multicolumn{2}{l|}{Latitudine delle coordinate geografiche in cui viene posto il misuratore} \\
+        latitudine & REAL & \multicolumn{2}{l|}{Latitudine delle coordinate geografiche in cui viene posto il misuratore} \\
         \hline
-        Longitudine & REAL & \multicolumn{2}{l|}{Longitudine delle coordinate geografiche in cui viene posto il misuratore} \\
+        longitudine & REAL & \multicolumn{2}{l|}{Longitudine delle coordinate geografiche in cui viene posto il misuratore} \\
         \hline
-        idArea & & Identifica l'area a cui fa riferimento il misuratore & Chiave esterna: Area(Id)\\
+        idArea & INTEGER & Identifica l'area a cui fa riferimento il misuratore & Chiave esterna: Area(id)\\
         \hline
     \end{tabularx}
 \end{center}
@@ -85,7 +85,7 @@
         \rowcolor{gray!30}
         \multicolumn{3}{|c|}{\textbf{SENSORE}}\\
         \hline
-        Raggio & INTEGER & Il raggio d'azione entro il quale il sensore è in grado di rilevare persone \\
+        raggio & INTEGER & Il raggio d'azione entro il quale il sensore è in grado di rilevare persone \\
         \hline
     \end{tabularx}
 \end{center}
@@ -97,7 +97,7 @@
         \rowcolor{gray!30}
         \multicolumn{3}{|c|}{\textbf{LAMPIONE}}\\
         \hline
-        Luminosità & INTEGER & Livello di luminosità in cui si trova il lampione \\
+        luminosita & INTEGER & Livello di luminosità in cui si trova il lampione \\
         \hline
     \end{tabularx}
 \end{center}
