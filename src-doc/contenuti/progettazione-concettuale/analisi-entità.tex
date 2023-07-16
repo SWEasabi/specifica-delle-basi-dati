@@ -51,9 +51,9 @@
         \hline
         AutoMode & BOOLEAN & \multicolumn{2}{l|}{Specifica se l'area viene gestita in modalità automatica o no (manuale)} \\
         \hline
-        LvlInf & VARCHAR(50) & \multicolumn{2}{l|}{In area gestita in modalità automatica, questo è il livello di luminosità a cui vengono posti i lampioni se non vengono rilevate persone all'interno dell'area} \\
+        LvlInf & VARCHAR(50) & \multicolumn{2}{l|}{In area gestita in modalità automatica, questo è il livello di luminosità} \\ & & \multicolumn{2}{l|}{a cui vengono posti i lampioni se non vengono rilevate persone all'interno dell'area} \\
         \hline
-        LvlSup & VARCHAR(20) & \multicolumn{2}{l|}{In area gestita in modalità automatica, questo è il livello di luminosità a cui vengono posti i lampioni se vengono rilevate persone all'interno dell'area} \\
+        LvlSup & VARCHAR(20) & \multicolumn{2}{l|}{In area gestita in modalità automatica, questo è il livello di luminosità} \\ & & \multicolumn{2}{l|}{a cui vengono posti i lampioni se vengono rilevate persone all'interno dell'area} \\
         \hline
     \end{tabularx}
 \end{center}
@@ -87,7 +87,8 @@
         \hline
         Id & SERIAL & Identifica univocamente un sensore di rilevamento di persone & Chiave\\
         \hline
-        Raggio & INTEGER & \multicolumn{2}{l|}{Il raggio d'azione entro il quale il sensore è in grado di rilevare persone} \\
+        Raggio & INTEGER & \multicolumn{2}{l|}{Il raggio d'azione entro il quale il sensore è in grado} \\ & & \multicolumn{2}{l|}{di rilevare persone} \\
+        \hline
         idMisuratore & & Identifica il misuratore a cui fa riferimento il sensore & Chiave esterna: Misuratore(Id)\\
         \hline
     \end{tabularx}
@@ -103,6 +104,7 @@
         Id & SERIAL & Identifica univocamente un lampione presente all'interno di un'area & Chiave\\
         \hline
         Luminosità & INTEGER & \multicolumn{2}{l|}{Livello di luminosità in cui si trova il sensore} \\
+        \hline
         idMisuratore & & Identifica il misuratore a cui fa riferimento il lampione & Chiave esterna: Misuratore(Id)\\
         \hline
     \end{tabularx}
