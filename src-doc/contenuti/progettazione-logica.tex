@@ -1,0 +1,40 @@
+\chapter{Progettazione logica}
+
+\section{Eliminazione delle generalizzazioni}
+
+\paragraph{Misuratore}
+
+Per evitare di accorpare le entità Sensore e Lampione nell'entità padre Misuratore, creando così dei campi NULL, è stato deciso di risolvere la generalizzazione mantenendo le tre entità inserendo le relazioni tra le entità figlie e l'entità padre.
+
+\section{Modifiche, aggiunte e chiarimenti alle chiavi}
+
+Tutte le chiavi primarie soino definite utilizzando le chiavi della progettazione concettuale, tranne nei seguenti casi.
+
+\paragraph{Sensore} Diventando il Sensore un'entità a sé stante, vengono aggiunte una chiave primaria ed una chiave esterna che indica il Misuratore a cui fa riferimento.
+
+\paragraph{Lampione} Diventando il Lampione un'entità a sé stante, vengono aggiunte una chiave primaria ed una chiave esterna che indica il Misuratore a cui fa riferimento.
+
+\section{Schema concettuale ristrutturato - Schema Logico}
+
+%% immagine
+
+\section{Descrizione schema relazionale}
+
+La chiave primaria è indicata in \textbf{grassetto}, le chiavi esterne sono indicate con la \underline{sottolineatura}.
+
+\textit{Utente}(\textbf{username}, nome, cognome, email, password, \underline{ruolo}) \\
+\textit{Ruolo}(\textbf{id}, nome) \\
+\textit{Area}(\textbf{id}, nome, autoMode, lvlInf, lvlSup) \\
+\textit{Misuratore}(\textbf{id}, \underline{idArea}, tipo, latitudine, longitudine) \\
+\textit{Sensore}(\textbf{id}, \underline{idMisuratore}, raggio) \\
+\textit{Lampione}(\textbf{id}, \underline{idMisuratore}, luminosita)
+
+\section{Vincoli di integrità referenziali}
+
+\textbf{Utente}.ruolo -> \textit{Ruolo}.id \\
+\textbf{Sensore}.idMisuratore -> \textit{Misuratore}.id \\
+\textbf{Lampione}.idMisuratore -> \textit{Misuratore}.id
+
+\section{Check e constraint}
+
+\paragraph{Area} In \textbf{Area} è attivato un check che controilla che il livello inferiore sia sempre minore del livello superiore.
